@@ -18,7 +18,6 @@ jobs:
         with:
           php-version: 8.0
           coverage: none
-          tools: phpunit
 
       - name: Download dependencies
         uses: ramsey/composer-install@v1
@@ -27,4 +26,4 @@ jobs:
         run: ./bin/console cache:warmup --env dev
 
       - name: Run tests
-        run: phpunit
+        run: ./vendor/bin/simple-phpunit
