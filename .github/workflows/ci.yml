@@ -22,5 +22,8 @@ jobs:
       - name: Download dependencies
         uses: ramsey/composer-install@v1
 
-      - name: Run tests
+      - name: Warm cache
         run: ./bin/console cache:warmup --env dev
+
+      - name: Run tests
+        run: ./vendor/bin/simple-phpunit
